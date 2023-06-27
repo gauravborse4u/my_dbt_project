@@ -1,0 +1,77 @@
+version: 2
+
+sources:
+  - name: PUBLIC
+    database: PC_DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: CHANNEL
+        columns:
+          - name: LIST_ID
+            tests:
+            - not_null
+            - unique
+      - name: CLASSES
+        columns:
+          - name: CLASS_ID
+            tests:
+            - not_null
+            - unique
+      - name: DEPARTMENTS
+        columns:
+          - name: DEPARTMENT_ID
+            tests:
+            - not_null
+            - unique
+      - name: ITEMS
+        columns:
+          - name: ITEM_ID
+            tests:
+            - not_null
+            - unique
+      - name: ITEM_MERCHANDISE_CLASS
+        columns:
+          - name: ITEM_MERCHANDISE_CLASS_ID
+            tests:
+            - not_null
+            - unique
+      - name: ITEM_MERCHANDISE_COLLECTION
+        columns:
+          - name: ITEM_MERCHANDISE_COLLECTION_ID
+            tests:
+            - not_null
+            - unique
+      - name: ITEM_MERCHANDISE_DEPARTMENT
+        columns:
+          - name: ITEM_MERCHANDISE_DEPARTMENT_ID
+            tests:
+            - not_null
+            - unique
+      - name: ITEM_MERCHANDISE_SUBCLASS
+        columns:
+          - name: ITEM_MERCHANDISE_SUBCLASS_ID
+            tests:
+            - not_null
+            - unique
+      - name: LOCATIONS
+        columns:
+          - name: LOCATION_ID
+            tests:
+            - not_null
+            - unique
+      - name: TRANSACTIONS
+        columns:
+          - name: TRANSACTION_ID
+            tests:
+            - not_null
+            - unique
+      - name: TRANSACTIONS_LINES
+        columns:
+          - name: TRANSACTION_LINE_ID
+            tests:
+            - not_null
+            - unique
+        # loaded_at_field: _batched_at
+        # freshness:
+        #   warn_after: {count: 12, period: hour}
+        #   error_after: {count: 24, period: hour}
