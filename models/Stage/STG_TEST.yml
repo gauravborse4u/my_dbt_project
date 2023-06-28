@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: STG_CHANNEL
+    columns: 
+      - name: LIST_ID
+        tests:
+          - unique
+          - not_null
+      - name: LIST_ITEM_NAME
+        tests:
+          - accepted_values:
+              values:
+                - "Care Center"
+                - "DTC"
+                - "Retail"
+                - "RTC"
+                - "Wholesale"
+  - name: STG_CLASSES
+    columns:
+      - name: ISINACTIVE
+        tests:
+          - accepted_values:
+              values:
+                - "Yes"
+                - "No"
+
+# We can write the test cases for other tables
